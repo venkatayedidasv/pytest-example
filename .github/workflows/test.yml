@@ -1,12 +1,7 @@
 name: Python CI
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_dispatch
 
 jobs:
   build:
@@ -27,9 +22,10 @@ jobs:
         source venv/bin/activate
 
     - name: Install dependencies
-      run: pip install -r requirements.txt
+      run: |
+        pip install -r requirements.txt
+        pip install -e .   
 
     - name: Run tests
-      run: |
-        pip install -e .   
+      run: 
         pytest
