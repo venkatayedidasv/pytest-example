@@ -1,0 +1,4 @@
+venv/  # Ignore the virtual environment directory
+*.pyc  # Ignore compiled Python files
+.idea
+*.iml
